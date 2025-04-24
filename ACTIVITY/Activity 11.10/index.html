@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: radial-gradient(rgb(238, 229, 229), rgb(176, 202, 176), rgb(121, 121, 255));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .table-container {
+            background-color: rgba(255, 255, 255, 0.116);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+        }
+
+        table {
+            max-width: 750px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table th {
+            padding: 0 05px;
+        }
+
+        table td {
+            padding: 5px;
+        }
+
+        .btn{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-container">
+            <table border="1" cellpadding="5" cellspacing="0">
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Contact Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Andres</td>
+                    <td>Obere Str. 57</td>
+                    <td>Berlin</td>
+                    <td>12209</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Andres</td>
+                    <td>Obere Str. 57</td>
+                    <td>Berlin</td>
+                    <td>12209</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Andres</td>
+                    <td>Obere Str. 57</td>
+                    <td>Berlin</td>
+                    <td>12209</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Andres</td>
+                    <td>Obere Str. 57</td>
+                    <td>Berlin</td>
+                    <td>12209</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Andres</td>
+                    <td>Obere Str. 57</td>
+                    <td>Berlin</td>
+                    <td>12209</td>
+                    <td>Germany</td>
+                </tr>
+            </table>
+        <div class="btn"><button id="hideRows">Hide Even Rows</button></div>
+        <div class="btn"><button id="showRows">Show Rows</button></div>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#hideRows").click(function(){
+                $("tr:even").hide();
+            });
+            $("#showRows").click(function(){
+                $("tr:even").show();
+            });
+        });
+    </script>
+</body>
+
+</html>

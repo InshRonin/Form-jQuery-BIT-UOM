@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: radial-gradient(rgb(238, 229, 229), rgb(176, 202, 176), rgb(121, 121, 255));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .salary-form {
+
+            background-color: rgba(255, 255, 255, 0.116);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 350px;
+
+        }
+
+        input {
+            border: none;
+            border-radius: 05px;
+            padding: 06px;
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        input[type="button"] {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        input[type="button"]:hover {
+            background-color: rgb(0, 0, 0, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            color: rgb(29, 18, 18);
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="salary-form">
+            <h1>Salary Calculation</h1>
+            <form action="#">
+                <div class="block">
+                    <label for="fName">First Name</label>
+                    <input type="text" name="FirstName" id="fName" required><br>
+                </div>
+                <br>
+                <div class="block">
+                    <label for="lName">Last Name</label>
+                    <input type="text" name="LastName" id="lName" required><br>
+                </div>
+                <br>
+                <div class="block">
+                    <label for="HoursWorked">Number of Working Hours</label>
+                    <input type="number" name="HoursWorked" id="HoursWorked" min="0" required><br>
+                </div>
+                <br>
+                <input type="button" value="submit" onclick="calculateSalary()">
+            </form>
+            <p id="netSalary"></p>
+        </div>
+    </div>
+
+    <script>
+
+        function calculateSalary() {
+            const firstName = document.getElementById("fName").value;
+            const lastName = document.getElementById("lName").value;
+            var hoursWorked = document.getElementById("HoursWorked").value;
+            var Salary = document.getElementById("netSalary");
+
+            var newHoursWorked = parseFloat(hoursWorked)
+            var netIncome = (newHoursWorked * 250) - (newHoursWorked * 250 * 0.8);
+
+
+            Salary.innerHTML = `Net Salary of ${firstName} ${lastName} is ${netIncome}`;
+            Salary.style.border = "1px solid rgb(248, 0, 0)";
+        }
+
+
+    </script>
+</body>
+
+</html>
