@@ -21,7 +21,7 @@ This repository features **three interactive activities**:
 
 
 
-## 🔹 Open the HTML Files
+### 🔹 Open the HTML Files
 Simply open the .html files in your browser to explore the activities! No extra setup is required.
 
 ## 🤝 Contributions
