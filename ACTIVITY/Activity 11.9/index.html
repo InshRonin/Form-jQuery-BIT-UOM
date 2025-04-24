@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- Include jQuery -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include jQuery Validation Plugin -->
+    <script src="./node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: radial-gradient(rgb(238, 229, 229), rgb(176, 202, 176), rgb(121, 121, 255));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-style {
+            background-color: rgba(255, 255, 255, 0.116);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 400px;
+        }
+
+        input {
+            border: none;
+            border-radius: 5px;
+            padding: 6px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .block {
+            margin: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: left;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        input[type="button"] {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        input[type="button"]:hover {
+            background-color: rgb(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-style">
+            <h2>Registration</h2>
+            <form action="#" name="registrationForm">
+                <div class="block">
+                    <label for="fName">First Name</label>
+                    <input type="text" id="fName" name="fName">
+                </div>
+                <br>
+                <div class="block">
+                    <label for="lName">Last Name</label>
+                    <input type="text" id="lName" name="lName">
+                </div>
+                <br>
+                <div class="block">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <br>
+                <div class="block">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <br>
+                <div class="block">
+                    <input type="button" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("form[name='registrationForm']").validate({
+                rules: {
+                    fName: {
+                        required: true,
+                        minlength: 3
+                    },
+                    lName: {
+                        required: true,
+                        minlength: 3
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    }
+                },
+                messages: {
+                    fName: "Please enter your first name",
+                    lName: "Please enter your last name",
+                    email: {
+                        required: "Please enter a valid email address",
+                        email: "Your email address must be in the correct format"
+                    },
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long"
+                    }
+                },
+                submitHandler: function (form) {
+                    alert("Registration successful!");
+                    form.submit();
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
