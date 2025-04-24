@@ -16,11 +16,12 @@ This repository features **three interactive activities**:
 ## 🚀 Getting Started  
 
 ### 🔹 Clone the Repository  
-```sh git clone https://github.com/InshRonin/Form-jQuery-BIT-UOM.git```
+```sh``` 
+```git clone https://github.com/InshRonin/Form-jQuery-BIT-UOM.git```
 
 
 
-##🔹 Open the HTML Files
+###🔹 Open the HTML Files
 Simply open the .html files in your browser to explore the activities! No extra setup is required.
 
 ## 🤝 Contributions
